@@ -1,0 +1,66 @@
+var helpers = require("../../example/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  _parcelHelpers.export(exports, "PrimaryButtonSize", function () {
+    return PrimaryButtonSize;
+  });
+  _parcelHelpers.export(exports, "PrimaryButton", function () {
+    return PrimaryButton;
+  });
+  var _react = require("react");
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  var _jsxFileName = "/Users/jonathandelasen/DEV/repositories/front/btm-components-lib/src/PrimaryButton/PrimaryButton.tsx";
+  var PrimaryButtonSize;
+  (function (PrimaryButtonSize) {
+    PrimaryButtonSize[PrimaryButtonSize["S"] = 0] = "S";
+    PrimaryButtonSize[PrimaryButtonSize["M"] = 1] = "M";
+    PrimaryButtonSize[PrimaryButtonSize["L"] = 2] = "L";
+  })(PrimaryButtonSize || (PrimaryButtonSize = {}));
+  function getButtonSizeClass(size) {
+    switch (size) {
+      case PrimaryButtonSize.S:
+        return "py-2 px-4 sm:px-4 text-sm ";
+      case PrimaryButtonSize.M:
+        return "py-2.5 px-4 sm:px-10 text-base ";
+      case PrimaryButtonSize.L:
+        return "py-2.5 px-4 sm:px-10 text-lg ";
+    }
+  }
+  const PrimaryButton = ({children, onClick, className, fill = true, loading = false, size = PrimaryButtonSize.M, type = "button"}) => {
+    let classNameType = fill ? "text-white bg-gradient-to-r from-primary-gradien1-dark to-primary-gradien2-dark " : "text-primary-text-dark border-2";
+    if (loading) classNameType += " cursor-not-allowed";
+    return (
+      /*#__PURE__*/_reactDefault.default.createElement("button", {
+        disabled: loading,
+        type: type,
+        className: `focus:outline-none font-semibold transform hover:-translate-y-0.5 hover:shadow-lg rounded-md ${getButtonSizeClass(size)} ${classNameType} ${className}`,
+        onClick: onClick,
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 45,
+          columnNumber: 5
+        }
+      }, loading && /*#__PURE__*/_reactDefault.default.createElement("div", {
+        className: "flex place-content-center ",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 54,
+          columnNumber: 9
+        }
+      }), !loading && children)
+    );
+  };
+  _c = PrimaryButton;
+  var _c;
+  $RefreshReg$(_c, "PrimaryButton");
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
